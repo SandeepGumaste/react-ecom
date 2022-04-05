@@ -49,4 +49,16 @@ export const popularProducts = [
     id: 5,
     img: "./assets/newSneaker.jpg",
   },
+  {
+    id: 6,
+    img: "./assets/newSneaker.jpg",
+  },
+  {
+    id: 7,
+    img: "./assets/newSneaker.jpg",
+  },
+  {
+    id: 8,
+    img: "./assets/newSneaker.jpg",
+  },
 ];

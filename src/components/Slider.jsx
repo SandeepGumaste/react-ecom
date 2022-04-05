@@ -52,12 +52,13 @@ const ImgContainer = styled.div`
   justify-content: end;
 `;
 
-const Img = styled.div`
+const Image = styled.div`
   width: 100%;
   height: 100%;
   background-image: url(${(props) => `${props.src}`});
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 
 const InfoContainer = styled.div`
@@ -102,7 +103,7 @@ const Slider = () => {
         {sliderItems.map(({ img, title, desc, bg, id }) => (
           <Slide bg={bg} key={id}>
             <ImgContainer>
-              <Img src={img} />
+              <Image src={img} />
             </ImgContainer>
             <InfoContainer>
               <Title>{title}</Title>
