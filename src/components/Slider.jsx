@@ -52,13 +52,19 @@ const ImgContainer = styled.div`
   justify-content: end;
 `;
 
-const Img = styled.img`
+const Image = styled.div`
+  width: 100%;
   height: 100%;
+  background-image: url(${(props) => `${props.src}`});
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
+  padding-right: 100px;
 `;
 const Title = styled.h1`
   font-size: 70px;
@@ -72,7 +78,10 @@ const Desc = styled.p`
 const Button = styled.button`
   padding: 10px;
   font-size: 20px;
-  background-color: transparent;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
 `;
 
 const Slider = () => {
@@ -91,10 +100,10 @@ const Slider = () => {
         <ArrowLeftOutlined />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
-        {sliderItems.map(({ img, title, desc, bg }) => (
-          <Slide bg={bg}>
+        {sliderItems.map(({ img, title, desc, bg, id }) => (
+          <Slide bg={bg} key={id}>
             <ImgContainer>
-              <Img src={img} />
+              <Image src={img} />
             </ImgContainer>
             <InfoContainer>
               <Title>{title}</Title>
